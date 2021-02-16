@@ -7,7 +7,7 @@ symbols = ['!', '@', '#', '$', '%', '^', '&', '*']
 symbols += symbols
 random.shuffle(symbols)
 
-def showCards(cards):
+def allCards(cards):
     print('\n')
     counter = 0
     for i in range(0, 4):
@@ -19,7 +19,7 @@ def showCards(cards):
 
 def playGame():
     global cards
-    showCards(cards)
+    allCards(cards)
     flips = 0
     cardsLeft = 16
     while cardsLeft > 0:
@@ -28,11 +28,11 @@ def playGame():
         first = input()
         firstIndex = cardsDict[first]
         currentCards[firstIndex] = symbols[firstIndex]
-        showCards(currentCards)
+        allCards(currentCards)
         second = input()
         secondIndex = cardsDict[second]
         currentCards[secondIndex] = symbols[secondIndex]
-        showCards(currentCards)
+        allCards(currentCards)
         if symbols[firstIndex] == symbols[secondIndex]:
             cards[firstIndex] = ' '
             cards[secondIndex] = ' '
